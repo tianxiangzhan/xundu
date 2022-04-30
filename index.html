@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>迅读：基于Transformer和R-Drop的文本精炼小助手迅读：基于Transformer和R-Drop的文本精炼小助手</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        .nobg {
+            background-color: rgba(218, 218, 218, 0);
+        }
+
+        .mybtn {
+            color: #fff;
+            background-color: #EB5894;
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light my-nav">
+    <a class="navbar-brand text-white" href="#"><strong>迅读：基于Transformer和R-Drop的文本精炼小助手</strong></a>
+
+</nav>
+<header></header>
+<section></section>
+
+<div class="container text-white" style="width: 100%;height: 100%">
+    <div class="row">
+        <div class="col-16 mx-auto">
+            <div class="jumbotron nobg">
+                <div class="row text-center">
+                    <div class="text-center col-16">
+                        <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+                        <div class="text-center col-16">
+                            <h2>文本输入&nbsp;</h2>
+                            <div class="form-group">
+                            <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message1"
+                                      name="message1"
+                                      placeholder="在这里输入需要被总结的的文本&#10（下方的文件上传功能支持 .pdf/.docx/.txt 格式的文件哦（<2M））"
+                                      rows="10"></textarea>
+                            </div>
+                            <button class="btn mybtn" id="submit" type="submit"> 精炼</button>
+                            <button class="btn mybtn" id="fileupload" type="submit">文件上传</button>
+                        </div>
+
+                        <div class="text-center col-16" style="height: 10%"></div>
+                        <div class="text-center col-16">
+                            <h2>文本总结&nbsp;</h2>
+                            <div class="form-group">
+                            <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message2"
+                                      name="message2"
+                                      placeholder="总结后的文本将显示在这" rows="10"></textarea>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
+<!--Vanta -->
+<script src="three.r119.min.js"></script>
+<script src="vanta.globe.min.js"></script>
+<script>
+    VANTA.GLOBE({
+        el: "#your-element-selector",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script><script src="js/three.r119.min.js"></script>
+<script src="js/vanta.globe.min.js"></script>
+<script>
+    VANTA.GLOBE({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+</html>
