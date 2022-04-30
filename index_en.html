@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>迅读：基于Transformer和R-Drop的文本精炼小助手</title>
+    <title>XunReading: A Text Refinement Assistant Based on Transformer and R-Drop</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <style>
@@ -66,21 +66,21 @@
 <!--        </div>-->
 <!--</nav>-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="index.html"><strong>迅读：基于Transformer和R-Drop的文本精炼小助手</strong></a>
+    <a class="navbar-brand" href="index.html"><strong>XunReading: A Text Refinement Assistant Based on Transformer and R-Drop</strong></a>
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <button onclick="enlargePage()" class="btn text-white">大字模式</button>
-            <button onclick="narrowPage()" class="btn text-white">字体缩小</button>
+            <button onclick="enlargePage()" class="btn text-white">Font Size+</button>
+            <button onclick="narrowPage()" class="btn text-white">Font Size-</button>
         </li>
 
         <!-- Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                选择语言(默认自动)
+                Choose Language(Auto Default)
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="index.html">中文</a>
+                <a class="dropdown-item" href="index.html">Chinese</a>
                 <a class="dropdown-item" href="index_en.html">English</a>
             </div>
         </li>
@@ -98,24 +98,24 @@
                     <div class="text-center col-16">
                         <div style="height: 10%"></div>
                         <div class="text-center col-16">
-                            <h2>文本输入&nbsp;</h2>
+                            <h2>Text Input&nbsp;</h2>
                             <div class="form-group">
                             <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message1"
                                       name="message1"
-                                      placeholder="在这里输入需要被总结的的文本&#10（下方的文件上传功能支持 .pdf/.docx/.txt 格式的文件哦（<2M））"
+                                      placeholder="Enter the text to be summarized here&#10 (the file upload function below supports files in .pdf/.docx/.txt format (<2M))"
                                       rows="10"></textarea>
                             </div>
-                            <button class="btn mybtn" id="submit" type="submit"> 精炼</button>
-                            <button class="btn mybtn" id="fileupload" type="submit">文件上传</button>
+                            <button class="btn mybtn" id="submit" type="submit"> Summarize</button>
+                            <button class="btn mybtn" id="fileupload" type="submit">Upload File</button>
                         </div>
 
                         <div class="text-center col-16" style="height: 10%"></div>
                         <div class="text-center col-16">
-                            <h2>文本总结&nbsp;</h2>
+                            <h2>Text Summarization</h2>
                             <div class="form-group">
                             <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message2"
                                       name="message2"
-                                      placeholder="总结后的文本将显示在这" rows="10"></textarea>
+                                      placeholder="The summarized text will be displayed here" rows="10"></textarea>
                             </div>
                         </div>
                         <div style="height: 10%"></div>
