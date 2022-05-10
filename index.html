@@ -1,154 +1,62 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>迅读：基于Transformer和R-Drop的文本精炼小助手</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-    <style>
-        .nobg {
-            background-color: rgba(218, 218, 218, 0);
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Login</title>
 
-        nav{
-            background-color: #579872;
-        }
+    <!--用百度的静态资源库的cdn安装bootstrap环境-->
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!--font-awesome 核心我CSS 文件-->
+    <link href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-        body{
-            background-color: #579872;
-        }
-        .mybtn {
-            color: #fff;
-            background-color: #507a61;
-            border-color: #fff;
-        }
-        textarea{
-            resize: none;
-        }
-    </style>
-    <script type="text/javascript">
-        //网页放大缩小的变量，初始值为1
-        var paramNumber = 1;
-        //缩小页面
-        function narrowPage(){
-            //设置最小限制
-            if(paramNumber >0.2){
-                paramNumber -=0.1;
-            }
-            //缩小body
-            document.getElementsByTagName('body')[0].style.zoom=paramNumber;
-        }
-        //放大页面
-        function enlargePage(){
-            //设置最大限制
-            if(paramNumber <5){
-                paramNumber +=0.1;
-            }
-            //放大body
-            document.getElementsByTagName('body')[0].style.zoom=paramNumber;
-        }
-    </script>
+
+    <!--为了保险起见，导入了本地的jquery和fontawesome    -->
+    <!--jquery-->
+    <script type="text/javascript" src="static/jquery-3.4.1.min.js" ></script>
+    <link rel="stylesheet" href="static/Login.css">
+    <!--font-awesome    -->
+    <link rel="stylesheet" href="font-awesome-4\7\0\css\font-awesome.min.css">
+
 </head>
 <body>
-<!--<nav class="navbar navbar-expand-lg navbar-light my-nav">-->
-<!--    <a class="navbar-brand text-white" href="#"></a>-->
-<!--        <div class="nav navbar-nav btn-group text-white navbar-right">-->
-<!--            <button type="button" class="btn btn-default dropdown-toggle mybtn" data-toggle="dropdown">中文-->
-<!--                <span class="caret"></span>-->
-<!--            </button>-->
-<!--            <ul class="dropdown-menu" role="menu">-->
-<!--                <li>-->
-<!--                    <a href="#">English</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--</nav>-->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="index.html"><strong>迅读：基于Transformer和R-Drop的文本精炼小助手</strong></a>
-    <!-- Links -->
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <button onclick="enlargePage()" class="btn text-white">大字模式</button>
-            <button onclick="narrowPage()" class="btn text-white">字体缩小</button>
-        </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                选择语言(默认自动)
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="index.html">中文</a>
-                <a class="dropdown-item" href="index_en.html">English</a>
-            </div>
-        </li>
-    </ul>
-
-</nav>
-<header></header>
-<section></section>
-
-<div class="container text-white" style="width: 100%;height: 100%">
-    <div class="row">
-        <div class="col-16 mx-auto">
-            <div class="jumbotron nobg">
-                <div class="row text-center">
-                    <div class="text-center col-16">
-                        <div style="height: 10%"></div>
-                        <div class="text-center col-16">
-                            <h2>文本输入&nbsp;</h2>
-                            <div class="form-group">
-                            <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message1"
-                                      name="message1"
-                                      placeholder="在这里输入需要被总结的的文本&#10（下方的文件上传功能支持 .pdf/.docx/.txt 格式的文件哦（<2M））"
-                                      rows="10"></textarea>
-                            </div>
-                            <button class="btn mybtn" id="submit" type="submit"> 精炼</button>
-                            <button class="btn mybtn" id="fileupload" type="submit">文件上传</button>
-                        </div>
-
-                        <div class="text-center col-16" style="height: 10%"></div>
-                        <div class="text-center col-16">
-                            <h2>文本总结&nbsp;</h2>
-                            <div class="form-group">
-                            <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message2"
-                                      name="message2"
-                                      placeholder="总结后的文本将显示在这" rows="10"></textarea>
-                            </div>
-                        </div>
-                        <div style="height: 10%"></div>
-                    </div>
+<div class="container">
+    <div class="form row">
+        <form class="form-horizontal col-sm-offset-3 col-md-offset-3" action="main.html" method="post">
+            <h3 class="form-title">登录</h3>
+            <div class="col-sm-9 col-md-9">
+                <div class="form-group">
+                    <!--        用户名图标和用户名输入框            -->
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="请输入用户名" required autofocus>
                 </div>
+                    <!--        密码图标和密码输入框                -->
+                <div class="form-group">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    <input class="form-control " type="password" name="password" id="password" placeholder="请输入密码" required>
+                </div>
+                    <!--        用超链接跳转到注册页面               -->
+                <div class="form-group">
+                    <br>
+                    <a href="register.html">没有账号？立即注册</a>
+                </div>
+                    <!--         登录按钮           -->
+                <div class="form-group">
+                    <button type="submit" value="登录" class="btn btn-success pull-right">登录</button>
+                </div>
+
             </div>
-        </div>
+        </form>
     </div>
 </div>
-
 </body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap-4.4.1.js"></script>
-<!--Vanta -->
-<script src="three.r119.min.js"></script>
-<script src="vanta.globe.min.js"></script>
-<script>
-    VANTA.GLOBE({
-        el: "#your-element-selector",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00
-    })
-</script>
-<script src="js/three.r119.min.js"></script>
-<script src="js/vanta.globe.min.js"></script>
+<script src="static/three.r119.min.js"></script>
+<script src="static/vanta.globe.min.js"></script>
 <script>
     VANTA.GLOBE({
         el: "body",
