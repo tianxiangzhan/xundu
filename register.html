@@ -18,11 +18,19 @@
 
     <!--为了保险起见，导入了本地的jquery和fontawesome    -->
     <!--jquery-->
-    <script type="text/javascript" src="static/jquery-3.4.1.min.js" ></script>
+    <script type="text/javascript" src="static/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="static/Login.css">
     <!--font-awesome    -->
     <link rel="stylesheet" href="font-awesome-4\7\0\css\font-awesome.min.css">
-
+    <script type="text/javascript">
+        function ccc() {
+            let form = document.getElementsByTagName("form")[0];
+            form.onsubmit = function () {
+                return false;//取消提交表单
+            }
+            window.location.href = "https://tianxiangzhan.github.io/xundu/main.html";
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -57,7 +65,7 @@
 
 <!--注册按钮-->
                     <div class="form-group">
-						<button type="submit" value="注册" class="btn btn-success pull-right">注册</button>
+                        <button class="btn btn-success pull-right" value="注册">注册</button>
                         <a href="index.html">
                             <button type="button" onclick="" class="btn btn-info pull-left" id="back_btn" value="返回"/>返回</button>
                         </a>
