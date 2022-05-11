@@ -50,12 +50,29 @@
             document.getElementsByTagName('body')[0].style.zoom=paramNumber;
         }
         function jinlian(){
-            document.former.action="/#";
+            document.former.action="#";
             document.former.submit();
         }
         function wenjian(){
-            document.former.action="/#";
+            document.former.action="#";
             document.former.submit();
+        }
+        window.onload=function ()
+        {
+            var u1 =document.getElementById("logAndreg");//获取登录注册组件id
+            var u2 =document.getElementById("user1");//获取用户信息组件id
+
+            var spans = $("#username").html();
+
+            if (spans == 'wu')//判断当前span数据是否为空
+            {
+                u2.style.visibility="hidden";//数据为空则隐藏用户信息组件
+            }else if(spans == ''){
+                u2.style.visibility="hidden";//数据为空则隐藏用户信息组件
+                u1.style.visibility="hidden";//数据不为空则隐藏登录注册组件
+            }else{
+                u1.style.visibility="hidden";//数据不为空则隐藏登录注册组件
+            }
         }
     </script>
 </head>
@@ -74,7 +91,7 @@
 <!--        </div>-->
 <!--</nav>-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="/index_en"><strong>XunReading: A Text Refinement Assistant Based on Transformer and R-Drop</strong></a>
+    <a class="navbar-brand" href="main_en.html"><strong>XunReading: A Text Refinement Assistant Based on Transformer and R-Drop</strong></a>
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -88,19 +105,22 @@
                 Choose Language(Auto Default)
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/index">Chinese</a>
-                <a class="dropdown-item" href="/index_en">English</a>
+                <a class="dropdown-item" href="main.html">Chinese</a>
+                <a class="dropdown-item" href="main_en.html">English</a>
             </div>
         </li>
         <li class="nav-item dropdown" id="user1">
             <a class="nav-link dropdown-toggle" href="#" id="username" data-toggle="dropdown">llj</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/index">User Information</a>
-                <a class="dropdown-item" href="/logout">logout</a>
+                <a class="dropdown-item" href="main.html">User Information</a>
+                <a class="dropdown-item" href="index.html">logout</a>
             </div>
         </li>
     </ul>
-
+    <div class="" style="float: right" id="logAndreg">
+        <a href="index.html" class="btn text-white pull-right">login</a>
+        <a href="register.html" class="btn text-white pull-right">register</a>
+    </div>
 </nav>
 <header></header>
 <section></section>
@@ -112,7 +132,7 @@
                 <div class="row text-center">
                     <div class="text-center col-16">
                         <div style="height: 10%"></div>
-                        <form class="text-center col-16" name="former" action="" method="post">
+                        <form class="text-center col-16" name="former" action="#" method="post">
                             <h2>Text Input&nbsp;</h2>
                             <div class="form-group">
                             <textarea aria-describedby="messageHelp" class="form-control" cols="100" id="message1"
