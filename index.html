@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="font-awesome-4\7\0\css\font-awesome.min.css">
     <script type="text/javascript">
         function ccc(){
+            let form = document.getElementsByTagName("form")[0];
+            form.onsubmit = function () {
+                return false;//取消提交表单
+            }
             window.location.href = "https://tianxiangzhan.github.io/xundu/main.html";
         }
     </script>
@@ -77,11 +81,5 @@
         color2: 0x24f542,
         backgroundColor: 0x579872
     })
-</script>
-<script>
-    let form = document.getElementsByTagName("form")[0];
-    form.onsubmit = function () {
-        return false;//取消提交表单
-    }
 </script>
 </html>
